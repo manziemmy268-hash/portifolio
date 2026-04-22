@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Emmanuel is a Software Developer specializing in Java, MySQL, and Modern Web Development. View my portfolio and projects.">
+    <meta name="keywords" content="Software Developer, Java, Web Development, Portfolio">
+
+    <!-- Open Graph / Social Media Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emmanuel.dev/">
+    <meta property="og:title" content="Emmanuel | Software Developer Portfolio">
+    <meta property="og:description" content="Building robust Java systems and crafting stunning web experiences.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/1e293b/3b82f6?text=Emmanuel+Portfolio">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://emmanuel.dev/">
+    <meta property="twitter:title" content="Emmanuel | Software Developer Portfolio">
+    <meta property="twitter:description" content="Building robust Java systems and crafting stunning web experiences.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630/1e293b/3b82f6?text=Emmanuel+Portfolio">
+
+    <title>Emmanuel | Software Developer Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Google Fonts: Inter for clean, modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Effect Containers -->
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <a href="#home" class="logo">E<span>.</span></a>
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu"
+            aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li class="theme-toggle-wrapper">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section fade-in">
+        <div class="hero-image-wrapper">
+            <div class="image-border"></div>
+            <img src="profile.jpg" alt="Emmanuel - Software Developer" class="profile-img" loading="eager">
+        </div>
+        <div class="hero-content">
+            <span class="greeting">Hi there, I am</span>
+            <h1 class="glitch-text" data-text="Emmanuel">Emmanuel</h1>
+            <h3 class="role-text">Software Developer</h3>
+            <p class="hero-desc">
+                Architecting robust backend systems and crafting high-performance, aesthetically stunning web
+                applications. Expertise in Java, Spring, and Modern Frontend.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">
+                    View My Work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="btn-secondary">
+                    Download CV <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section fade-in">
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
+        <div class="about-content glass-card">
+            <p>
+                I am a passionate software developer specializing in <span class="highlight-text">Java</span>,
+                <span class="highlight-text">MySQL</span>, and <span class="highlight-text">Modern Web
+                    Development</span>.
+                With a strong foundation in backend architecture and an eye for frontend aesthetics, I build systems
+                that
+                are not only functional but visually striking.
+            </p>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <h3>1</h3>
+                    <span>Year Experience</span>
+                </div>
+                <div class="stat-item">
+                    <h3>3+</h3>
+                    <span>Projects Completed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section fade-in">
+        <h2 class="section-title">Professional <span class="highlight">Experience</span></h2>
+
+        <div class="timeline">
+            <!-- Experience Item 1 -->
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <div class="timeline-date">2024 - Present</div>
+                    <h3>Software Engineer</h3>
+                    <h4>TechFlow Solutions</h4>
+                    <p>Architecting robust, scalable Java backend systems and spearheading modern frontend development
+                        using React and pure CSS glassmorphism. Improved overall system performance by 60%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section fade-in">
+        <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-category glass-card">
+                <h3>Frontend</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-brands fa-react"></i> React</span>
+                            <span class="skill-pct">90%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-brands fa-html5"></i> HTML/CSS</span>
+                            <span class="skill-pct">95%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-brands fa-js"></i> JavaScript</span>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category glass-card">
+                <h3>Backend</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-brands fa-java"></i> Java / Spring</span>
+                            <span class="skill-pct">95%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-solid fa-database"></i> MySQL</span>
+                            <span class="skill-pct">90%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category glass-card">
+                <h3>Tools & Architecture</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-brands fa-git-alt"></i> Git CI/CD</span>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-brands fa-aws"></i> AWS / Cloud</span>
+                            <span class="skill-pct">75%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fa-solid fa-server"></i> Microservices</span>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section fade-in">
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+
+        <div class="project-filters">
+            <div class="search-box glass-card">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="project-search" placeholder="Search projects or technologies...">
+            </div>
+            <div class="filter-pills">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card glass-card" data-project="1" data-category="backend">
+                <div class="project-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="Screenshot of Student Management System dashboard" loading="lazy" width="600" height="400">
+                    <div class="project-overlay">
+                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Student Management System</h3>
+                    <p>Robust Java + MySQL CRUD application for managing academic records with secure database
+                        integration.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                        <span>MySQL</span>
+                        <span>JDBC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card glass-card" data-project="2" data-category="backend">
+                <div class="project-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="Screenshot of Banking System application interface" loading="lazy" width="600"
+                        height="400">
+                    <div class="project-overlay">
+                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Banking System</h3>
+                    <p>Object-oriented Java application featuring secure transactions, account management, and extensive
+                        JUnit test coverage.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                        <span>JUnit</span>
+                        <span>OOP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card glass-card" data-project="3" data-category="frontend">
+                <div class="project-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="Screenshot of Emmanuel's V3 Portfolio website" loading="lazy" width="600" height="400">
+                    <div class="project-overlay">
+                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>V3 Portfolio</h3>
+                    <p>Modern, responsive portfolio website featuring dark mode aesthetics, glassmorphism, and dynamic
+                        animations.</p>
+                    <div class="tech-stack">
+                        <span>HTML5</span>
+                        <span>CSS/Glass</span>
+                        <span>JS</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section fade-in">
+        <h2 class="section-title"><span>Get in touch</span>Let's Start a <span class="highlight">Conversation</span>
+        </h2>
+        <div class="contact-grid glass-card">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="contact-details-wrapper">
+                        <h3>Email Me</h3>
+                        <p>nkiemmanuel@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="contact-details-wrapper">
+                        <h3>Call Me</h3>
+                        <p>+250 793 511 982</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="contact-details-wrapper">
+                        <h3>Location</h3>
+                        <p>Remote / Worldwide</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form class="contact-form" action="https://formspree.io/f/mreykbyg" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name"
+                            autocomplete="name" minlength="2" maxlength="50">
+                        <span class="form-error" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com"
+                            autocomplete="email">
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (Optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+250 xxx xxx xxx" autocomplete="tel">
+                        <span class="form-error" id="phone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" required placeholder="Tell me about your project..."
+                            rows="5" minlength="10" maxlength="500"></textarea>
+                        <span class="char-count">0/500</span>
+                        <span class="form-error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn-primary form-btn submit-btn">
+                        Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                    <span class="form-success" id="form-success"></span>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Emmanuel. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Go to top of page">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-wrapper">
+        <div id="whatsapp-greeting" class="whatsapp-greeting glass-card">
+            <p>Hi, how can I help you?</p>
+            <button id="close-greeting" class="close-greeting" aria-label="Dismiss greeting">&times;</button>
+        </div>
+        <a href="https://wa.me/250793511982" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+            aria-label="Contact me on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Message Me</span>
+        </a>
+    </div>
+
+    <!-- Project Modal overlay -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="Project Image">
+                <div class="modal-info">
+                    <h3 id="modal-title">Project Title</h3>
+                    <div class="tech-stack" id="modal-stack"></div>
+                    <p id="modal-desc">Project Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
