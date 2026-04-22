@@ -1114,7 +1114,8 @@ section {
         font-family: var(--font-primary);
         font-size: 1rem;
         transition: var(--transition-smooth);
-        -webkit-appearance: none; /* Fix for iOS input styling */
+        -webkit-appearance: none; 
+        appearance: none; /* Standard property for compatibility */
     }
 
 .form-group input:focus,
