@@ -32,8 +32,10 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome for Icons (with SRI for security) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
@@ -73,7 +75,7 @@
     <section id="home" class="hero-section fade-in">
         <div class="hero-image-wrapper">
             <div class="image-border"></div>
-            <img src="profile.jpg" alt="Emmanuel - Software Developer" class="profile-img" loading="eager">
+            <img src="profile.jpg" alt="Emmanuel - Software Developer" class="profile-img" loading="eager" fetchpriority="high">
         </div>
         <div class="hero-content">
             <span class="greeting">Hi there, I am</span>
@@ -345,14 +347,14 @@
                     <i class="fa-solid fa-envelope"></i>
                     <div class="contact-details-wrapper">
                         <h3>Email Me</h3>
-                        <p>nkiemmanuel@gmail.com</p>
+                        <p id="email-display" class="obfuscated">Click to reveal email</p>
                     </div>
                 </div>
                 <div class="contact-card">
                     <i class="fa-solid fa-phone"></i>
                     <div class="contact-details-wrapper">
                         <h3>Call Me</h3>
-                        <p>+250 793 511 982</p>
+                        <p id="phone-display" class="obfuscated">Click to reveal phone</p>
                     </div>
                 </div>
                 <div class="contact-card">

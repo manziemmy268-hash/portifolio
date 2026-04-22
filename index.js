@@ -429,6 +429,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalDesc = document.getElementById('modal-desc');
 
     /* ==========================================
+       CONTACT OBFUSCATION & REVEAL (Bot protection)
+    ========================================== */
+    const emailDisplay = document.getElementById('email-display');
+    const phoneDisplay = document.getElementById('phone-display');
+
+    if (emailDisplay) {
+        emailDisplay.addEventListener('click', () => {
+            const u = "nkiemmanuel";
+            const d = "gmail.com";
+            emailDisplay.textContent = `${u}@${d}`;
+            emailDisplay.classList.add('revealed');
+        }, { once: true });
+    }
+
+    if (phoneDisplay) {
+        phoneDisplay.addEventListener('click', () => {
+            const p = "+250 793 511 982";
+            phoneDisplay.textContent = p;
+            phoneDisplay.classList.add('revealed');
+        }, { once: true });
+    }
+
+    /* ==========================================
        WHATSAPP GREETING LOGIC
     ========================================== */
     const waGreeting = document.getElementById('whatsapp-greeting');
@@ -461,9 +484,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (data) {
                     modalImg.src = data.img;
-                    modalTitle.innerText = data.title;
-                    modalStack.innerHTML = data.stack;
-                    modalDesc.innerHTML = data.desc;
+                    modalImg.alt = data.title; // Performance & A11y
+                    modalTitle.textContent = data.title; // Safer than innerHTML
+                    modalStack.innerHTML = data.stack; // Local trusted data
+                    modalDesc.innerHTML = data.desc; // Local trusted data
 
                     modal.classList.add('active');
                     document.body.classList.add('modal-open');
@@ -487,55 +511,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.querySelector('.modal-content').scrollTop = 0;
             }
         });
-    }
-
-    /* ==========================================
-       STATISTICS COUNTER ANIMATION
-    ========================================== */
-    function animateCounter(element) {
-        const target = parseInt(element.getAttribute('data-target'));
-        const duration = 2000; // 2 seconds
-        const updateFrequency = 30; // updates per second
-        const updates = (duration / 1000) * updateFrequency;
-        const increment = target / updates;
-
-        let current = 0;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                element.textContent = target;
-                element.classList.add('animated');
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(current);
-            }
-        }, 1000 / updateFrequency);
-    }
-
-    // Observe stats section for counter animation
-    const statNumbers = document.querySelectorAll('.stat-number');
-    if (statNumbers.length > 0) {
-        const statsSection = document.querySelector('.stats-section');
-        const statsObserverOptions = {
-            threshold: 0.3
-        };
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                    entry.target.classList.add('counted');
-                    statNumbers.forEach(num => {
-                        if (!num.classList.contains('animated')) {
-                            animateCounter(num);
-                        }
-                    });
-                }
-            });
-        }, statsObserverOptions);
-
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
     }
 
     /* ==========================================
@@ -564,40 +539,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', updateActiveNavLink);
-
-    /* ==========================================
-       FAQ ACCORDION FUNCTIONALITY
-    ========================================== */
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains('active');
-
-            // Close all other FAQ items
-            document.querySelectorAll('.faq-item.active').forEach(item => {
-                if (item !== faqItem) {
-                    item.classList.remove('active');
-                }
-            });
-
-            // Toggle current item
-            if (isActive) {
-                faqItem.classList.remove('active');
-            } else {
-                faqItem.classList.add('active');
-            }
-        });
-    });
-
-    // Close FAQ on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.faq-item.active').forEach(item => {
-                item.classList.remove('active');
-            });
-        }
-    });
     
 });
