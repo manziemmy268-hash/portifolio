@@ -4,16 +4,16 @@
 :root {
     /* Premium Color Palette - Light Mode */
     --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --bg-secondary: #f1f5f9;
+    --text-primary: #020617;   /* Deep Navy for high contrast */
+    --text-secondary: #334155; /* Slate grey */
     
     /* Elegant Accents */
-    --accent-primary: #6366f1;   /* Indigo */
-    --accent-secondary: #10b981; /* Emerald */
-    --accent-tertiary: #f43f5e;  /* Rose */
-    --accent-quaternary: #fbbf24; /* Amber */
-    --accent-white: #0f172a;
+    --accent-primary: #4f46e5;   /* Indigo - slightly darker for visibility */
+    --accent-secondary: #059669; /* Emerald */
+    --accent-tertiary: #e11d48;  /* Rose */
+    --accent-quaternary: #d97706; /* Amber */
+    --accent-white: #020617;
     
     /* Refined Shadows & Glows */
     --accent-glow: rgba(99, 102, 241, 0.15);
@@ -29,9 +29,9 @@
     --card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
     
     /* Background Styles - Light Mode */
-    --bg-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
-                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    --bg-image: radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, rgba(5, 150, 105, 0.05) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.05) 0, transparent 50%);
     --bg-blend: normal;
 
     /* Typography Overhaul */
@@ -496,7 +496,8 @@ section {
     line-height: 0.95;
     margin-bottom: 1.5rem;
     letter-spacing: -0.04em;
-    background: linear-gradient(to bottom, var(--text-primary), var(--text-secondary));
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-primary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -524,9 +525,10 @@ section {
 .hero-desc {
     font-size: 1.15rem;
     color: var(--text-secondary);
-    margin: 0 auto 3rem;
+    margin: 0 0 3rem;
     max-width: 600px;
     line-height: 1.6;
+    font-weight: 500;
 }
 
 .hero-buttons {
@@ -597,6 +599,57 @@ section {
     transform: translateY(-10px) scale(1.02);
     border-color: var(--accent-primary);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   SERVICES SECTION
+========================================= */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.service-card {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: var(--accent-glow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 800;
+}
+
+.service-problem {
+    font-size: 0.9rem;
+    color: var(--accent-tertiary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-outcome {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 /* =========================================
@@ -999,6 +1052,79 @@ section {
     border-radius: 50px;
     font-family: var(--font-heading);
     font-weight: 500;
+}
+
+/* =========================================
+   TRUST & CREDIBILITY SECTION
+========================================= */
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.trust-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.trust-point {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    border-left: 3px solid var(--accent-primary);
+}
+
+.trust-point h4 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.trust-point p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.testimonial-card {
+    position: relative;
+    padding: 3rem 2.5rem;
+}
+
+.testimonial-card i.quote {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    font-size: 2rem;
+    color: var(--accent-glow);
+    z-index: -1;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.author-name {
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.author-role {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
 }
 
 /* =========================================

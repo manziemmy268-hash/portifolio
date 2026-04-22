@@ -344,25 +344,25 @@ document.addEventListener('DOMContentLoaded', () => {
     ========================================== */
     const projectData = {
         '1': {
-            title: 'Student Management System',
+            title: 'Financial Transaction Engine',
             category: 'backend',
             img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80',
-            stack: '<span>Java</span><span>MySQL</span><span>JDBC</span><span>JavaFX</span>',
-            desc: '<p>A comprehensive, robust desktop application developed to manage academic records securely. Features include student enrollment, grade tracking, automated report generation, and secure role-based access control.</p><br><p><strong>Key Achievements:</strong></p><ul><li>Designed normalized MySQL database schema handling 10k+ records.</li><li>Implemented secure authentication using bcrypt.</li><li>Optimized SQL queries, reducing load times by 30%.</li></ul>'
+            stack: '<span>Java</span><span>MySQL</span><span>Architecture</span>',
+            desc: '<h3>The Problem</h3><p>Traditional financial software often lacks the modularity and security required for high-stakes transactions.</p><h3>The Solution</h3><p>Developed a robust Java-based engine utilizing Object-Oriented principles to ensure full data integrity and secure processing.</p><h3>The Result</h3><p>A secure, audit-ready system with comprehensive test coverage, effectively eliminating transaction error rates.</p>'
         },
         '2': {
-            title: 'Banking System',
+            title: 'Workflow Optimization Tool',
             category: 'backend',
             img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
-            stack: '<span>Java Spring Boot</span><span>JUnit</span><span>OOP</span>',
-            desc: '<p>An enterprise-grade banking API simulation featuring secure transactions, distributed account management, and extensive automated test coverage.</p><br><p><strong>Key Achievements:</strong></p><ul><li>Built robust RESTful APIs following microservice architecture principles.</li><li>Achieved 95% test coverage using JUnit and Mockito.</li><li>Implemented transaction rolling-back features for data integrity.</li></ul>'
+            stack: '<span>Java</span><span>JUnit</span><span>Enterprise</span>',
+            desc: '<h3>The Problem</h3><p>Teams lose significant productivity due to fragmented communication and unclear task ownership.</p><h3>The Solution</h3><p>Engineered a custom real-time management platform with automated deadline tracking and priority sorting.</p><h3>The Result</h3><p>Streamlined team collaboration and enabled faster project delivery through clear accountability.</p>'
         },
         '3': {
-            title: 'V3 Portfolio',
+            title: 'Digital Identity System',
             category: 'frontend',
             img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-            stack: '<span>HTML5</span><span>CSS Glassmorphism</span><span>Vanilla JS</span>',
-            desc: '<p>A highly performant, custom-built portfolio designed to showcase front-end capabilities without relying on heavy frameworks. Features deep theming, CSS variables, and native Intersection Observers.</p><br><p><strong>Key Achievements:</strong></p><ul><li>Achieved a 100/100 Lighthouse performance score.</li><li>Implemented complex state management and animations using pure Vanilla JS.</li><li>Designed a scalable, premium "dark mode" aesthetic.</li></ul>'
+            stack: '<span>HTML5</span><span>Performance</span><span>UX/UI</span>',
+            desc: '<h3>The Problem</h3><p>Slow, dated websites lose potential clients before they even engage with the brand.</p><h3>The Solution</h3><p>Built a state-of-the-art digital identity using modern CSS and optimized asset delivery for sub-second load times.</p><h3>The Result</h3><p>A professional, high-performance interface that establishes immediate authority and significantly increases lead conversion.</p>'
         }
     };
 
