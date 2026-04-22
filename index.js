@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (emailDisplay) {
         emailDisplay.addEventListener('click', () => {
-            const u = "nkiemmanuel";
+            const u = "nkiranuyeemmanuel1";
             const d = "gmail.com";
             emailDisplay.textContent = `${u}@${d}`;
             emailDisplay.classList.add('revealed');

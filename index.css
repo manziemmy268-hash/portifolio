@@ -461,18 +461,20 @@ section {
 .hero-section {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 100px 5% 60px;
+    justify-content: space-between;
+    text-align: left;
+    padding: 120px 5% 80px;
+    gap: 4rem;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    flex: 1;
 }
 
 .greeting {
@@ -507,16 +509,17 @@ section {
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
 }
 
-.role-text::before, .role-text::after {
+.role-text::after {
     content: '';
     height: 2px;
-    width: 30px;
+    width: 60px;
     background: var(--accent-glow);
 }
+/* Removed ::before for left-alignment */
 
 .hero-desc {
     font-size: 1.15rem;
@@ -529,14 +532,14 @@ section {
 .hero-buttons {
     display: flex;
     gap: 1.2rem;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 4rem;
 }
 
 .social-links {
     display: flex;
     gap: 1.2rem;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .social-icon {
@@ -563,37 +566,37 @@ section {
 
 .hero-image-wrapper {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 3rem;
+    width: 350px;
+    height: 350px;
     z-index: 10;
+    flex-shrink: 0;
 }
 
 .image-border {
     position: absolute;
-    inset: -15px;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+    inset: -12px;
+    border-radius: 50%;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-    animation: morph 10s linear infinite alternate;
-    opacity: 0.3;
-    filter: blur(10px);
+    opacity: 0.25;
+    filter: blur(15px);
+    z-index: -1;
 }
 
 .profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: morph 8s linear infinite alternate;
-    border: 2px solid var(--glass-border);
-    box-shadow: var(--shadow-xl);
+    object-position: top;
+    border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     transition: var(--transition-smooth);
 }
 
 .profile-img:hover {
-    transform: scale(1.05) rotate(2deg);
+    transform: translateY(-10px) scale(1.02);
     border-color: var(--accent-primary);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================================
@@ -1249,13 +1252,6 @@ section {
     50% { transform: translateY(-20px) scale(1.05); }
 }
 
-@keyframes morph {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-    50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-    75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-}
 
 /* Scroll Revel Animations */
 .fade-in {
@@ -1274,15 +1270,29 @@ section {
 ========================================= */
 @media (max-width: 992px) {
     .hero-section {
+        flex-direction: column;
+        text-align: center;
         min-height: auto;
         padding-top: 150px;
         padding-bottom: 50px;
+        gap: 2rem;
     }
 
     .hero-content {
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 100%;
+    }
+
+    .hero-image-wrapper {
+        width: 250px;
+        height: 250px;
+        order: -1;
+    }
+
+    .role-text {
+        justify-content: center;
     }
 
     .hero-desc {
