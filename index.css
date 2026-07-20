@@ -490,7 +490,7 @@ section {
     border-radius: 50px;
 }
 
-.glitch-text {
+.hero-title {
     font-size: clamp(3rem, 10vw, 6.5rem);
     font-weight: 800;
     line-height: 0.95;
@@ -1479,7 +1479,7 @@ section {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .glitch-text {
+    .hero-title {
         font-size: clamp(2.5rem, 8vw, 4rem);
     }
 
@@ -1905,7 +1905,7 @@ body.modal-open {
         padding: 120px 4% 40px;
     }
 
-    .glitch-text {
+    .hero-title {
         font-size: 2.5rem;
     }
 

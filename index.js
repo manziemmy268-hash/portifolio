@@ -113,37 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================
-       DYNAMIC GLITCH TEXT EFFECT ON HERO
-    ========================================== */
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const glitchText = document.querySelector(".glitch-text");
-    
-    if (glitchText) {
-        glitchText.addEventListener("mouseover", event => {  
-            let iterations = 0;
-            const originalText = event.target.dataset.text;
-            
-            const interval = setInterval(() => {
-                event.target.innerText = originalText
-                    .split("")
-                    .map((letter, index) => {
-                        if(index < iterations) {
-                            return originalText[index];
-                        }
-                        return letters[Math.floor(Math.random() * 26)];
-                    })
-                    .join("");
-                
-                if(iterations >= originalText.length){ 
-                    clearInterval(interval);
-                }
-                
-                iterations += 1 / 3;
-            }, 30);
-        });
-    }
-
-    /* ==========================================
        AJAX FORM SUBMISSION WITH VALIDATION
     ========================================== */
     const form = document.querySelector('.contact-form');
