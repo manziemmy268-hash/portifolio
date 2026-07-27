@@ -12,28 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('appear');
-                
-                // If it's the skills section, animate the bars
-                if (entry.target.id === 'skills') {
-                    const progressBars = document.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        bar.style.width = width;
-                    });
-                }
-                
-                // Optional: Unobserve after revealing to animate only once
-                // scrollObserver.unobserve(entry.target);
             } else {
-                // Optional: Remove class when scrolling away to animate repeatedly
                 entry.target.classList.remove('appear');
-                
-                if (entry.target.id === 'skills') {
-                    const progressBars = document.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        bar.style.width = '0';
-                    });
-                }
             }
         });
     }, observerOptions);
@@ -65,13 +45,101 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================
+       NAVBAR: SCROLL SPY & MOBILE TOGGLE
+    ========================================== */
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinksContainer = document.getElementById('nav-links');
+    const sections = document.querySelectorAll('section[id]');
+
+    // Navbar background on scroll
+    // Scroll spy — highlight active nav link
+    // Back to top button visibility
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    function handleScroll() {
+        const scrollY = window.scrollY;
+
+        // Navbar background
+        if (scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Scroll spy
+        const scrollPos = scrollY + 120;
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            if (scrollPos >= top && scrollPos < top + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+
+        // Back to top
+        if (backToTopBtn) {
+            if (scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Mobile nav toggle
+    if (navToggle && navLinksContainer) {
+        // Create overlay element
+        const overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+
+        function closeNav() {
+            navLinksContainer.classList.remove('open');
+            overlay.classList.remove('active');
+            navToggle.querySelector('i').className = 'fa-solid fa-bars';
+        }
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinksContainer.classList.contains('open');
+            if (isOpen) {
+                closeNav();
+            } else {
+                navLinksContainer.classList.add('open');
+                overlay.classList.add('active');
+                navToggle.querySelector('i').className = 'fa-solid fa-xmark';
+            }
+        });
+
+        overlay.addEventListener('click', closeNav);
+
+        // Close nav on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeNav);
+        });
+
+        // Close nav on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinksContainer.classList.contains('open')) {
+                closeNav();
+            }
+        });
+    }
+
+    /* ==========================================
        AJAX FORM SUBMISSION WITH VALIDATION
     ========================================== */
     const form = document.querySelector('.contact-form');
     if (form) {
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const phoneInput = document.getElementById('phone');
         const messageInput = document.getElementById('message');
         const charCount = document.querySelector('.char-count');
         const submitBtn = form.querySelector('.form-btn');
@@ -241,17 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================
        BACK TO TOP BUTTON
     ========================================== */
-    const backToTopBtn = document.getElementById('back-to-top');
-    
     if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -267,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '1': {
             title: 'Financial Transaction Engine',
             category: 'backend',
-            img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80',
+            img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
             stack: '<span>Java</span><span>MySQL</span><span>Spring Security</span><span>AES-256</span>',
             desc: '<h3>The Problem</h3><p>Traditional financial software often lacks the modularity and security required for high-stakes transactions.</p><h3>The Solution</h3><p>Developed a robust Java-based engine utilizing Object-Oriented principles and Spring Security for authentication. Sensitive data is encrypted at rest using AES-256, ensuring full data integrity and secure processing.</p><h3>The Result</h3><p>A secure, audit-ready system with comprehensive test coverage, effectively eliminating transaction error rates.</p>',
             links: '<a href="https://github.com/manziemmy268-hash" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View Source & Architecture Diagrams</a>'
@@ -275,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '2': {
             title: 'Workflow Optimization Tool',
             category: 'backend',
-            img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
+            img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
             stack: '<span>Java</span><span>JUnit</span><span>OAuth2</span><span>Enterprise</span>',
             desc: '<h3>The Problem</h3><p>Teams lose significant productivity due to fragmented communication and unclear task ownership.</p><h3>The Solution</h3><p>Engineered a custom real-time management platform with OAuth2-secured access, automated deadline tracking, and priority sorting.</p><h3>The Result</h3><p>Streamlined team collaboration and enabled faster project delivery through clear accountability.</p>',
             links: '<a href="https://github.com/manziemmy268-hash" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View Source & Data Flow Diagrams</a>'
@@ -283,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '3': {
             title: 'Digital Identity System',
             category: 'frontend',
-            img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+            img: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80',
             stack: '<span>HTML5</span><span>Performance</span><span>UX/UI</span>',
             desc: '<h3>The Problem</h3><p>Slow, dated websites lose potential clients before they even engage with the brand.</p><h3>The Solution</h3><p>Built a state-of-the-art digital identity using modern CSS and optimized asset delivery for sub-second load times.</p><h3>The Result</h3><p>A professional, high-performance interface that establishes immediate authority and significantly increases lead conversion.</p>',
             links: '<a href="https://github.com/manziemmy268-hash" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View on GitHub</a> <a href="#" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Case Study</a>'
@@ -414,6 +472,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close Modal via clicking outside content overlay
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+                modal.querySelector('.modal-content').scrollTop = 0;
+            }
+        });
+
+        // Close Modal via ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
                 modal.classList.remove('active');
                 document.body.classList.remove('modal-open');
                 modal.querySelector('.modal-content').scrollTop = 0;
