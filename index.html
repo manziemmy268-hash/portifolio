@@ -23,6 +23,29 @@
     <meta property="twitter:image" content="https://emmanuel.dev/profile.jpg">
 
     <title>Emmanuel | Systems & Software Consultant</title>
+    <link rel="canonical" href="https://emmanuel.dev/">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Emmanuel - Systems & Software Consultant",
+        "url": "https://emmanuel.dev",
+        "description": "Strategic software solutions for businesses and institutions. Scaling organizations through custom web applications and digital infrastructure.",
+        "image": "https://emmanuel.dev/profile.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kigali",
+            "addressCountry": "RW"
+        },
+        "areaServed": ["RW", "KE", "UG", "TZ"],
+        "knowsAbout": ["Java", "Spring Security", "MySQL", "Web Development", "School Management Systems", "Financial Software", "Enterprise Workflow"],
+        "email": "nkiranuyeemmanuel1@gmail.com",
+        "telephone": "+250793511982",
+        "sameAs": ["https://github.com/manziemmy268-hash"]
+    }
+    </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-family='system-ui' font-size='60' font-weight='800' fill='white' text-anchor='middle'>E</text></svg>">
     <link rel="stylesheet" href="index.css">
 
@@ -43,6 +66,9 @@
 </head>
 
 <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Background Effect Containers -->
     <div class="background-effects">
         <div class="glow-orb orb-1"></div>
@@ -55,16 +81,18 @@
         <div class="nav-inner">
             <a href="#home" class="nav-logo">E<span class="nav-logo-dot">.</span></a>
             <div class="nav-links" id="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
+                <a href="#home" class="nav-link active" aria-current="page">Home</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-                    <i class="fa-solid fa-moon"></i>
-                    <i class="fa-solid fa-sun"></i>
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
                 </button>
                 <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
                     <i class="fa-solid fa-bars"></i>
@@ -74,12 +102,13 @@
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section id="home" class="hero-section fade-in">
         <div class="hero-content">
             <h1 class="hero-title">Emmanuel</h1>
             <h3 class="role-text">Systems & Software Consultant</h3>
             <p class="hero-desc">
-                Scaling businesses through high-performance digital solutions. I design and develop secure, scalable systems that streamline operations and drive revenue for institutions in Rwanda and beyond.
+                I architect and deliver secure, high-performance digital systems for organizations that need reliability at scale. From enterprise transaction engines to school management platforms — I build the infrastructure that keeps businesses running.
             </p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">
@@ -98,7 +127,7 @@
         </div>
         <div class="hero-image-wrapper">
             <div class="image-border"></div>
-            <img src="profile.jpg" alt="Emmanuel - Software Developer" class="profile-img" loading="eager"
+            <img src="profile.jpg" alt="Emmanuel - Systems & Software Consultant" class="profile-img" loading="eager"
                 fetchpriority="high">
         </div>
     </section>
@@ -250,12 +279,128 @@
             </p>
             <div class="about-stats">
                 <div class="stat-item">
-                    <h3>Reliability</h3>
-                    <span>Clean Architecture</span>
+                    <h3>3+</h3>
+                    <span>Years Building Systems</span>
                 </div>
                 <div class="stat-item">
-                    <h3>Security</h3>
-                    <span>Data Integrity</span>
+                    <h3>10+</h3>
+                    <span>Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <span>System Uptime</span>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <span>Client Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="experience-section fade-in">
+        <h2 class="section-title">Professional <span class="highlight">Experience</span></h2>
+        <div class="timeline">
+            <div class="timeline-item glass-card">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Systems & Software Consultant</h3>
+                        <span class="timeline-date">2024 — Present</span>
+                    </div>
+                    <p class="timeline-company">Independent · Kigali, Rwanda</p>
+                    <ul class="timeline-achievements">
+                        <li>Architected enterprise financial transaction engine with AES-256 encryption and Spring Security, achieving zero transaction errors in production</li>
+                        <li>Built mining management platform providing end-to-end operational visibility for resource tracking and regulatory compliance</li>
+                        <li>Delivered school management systems automating grading, attendance, and fee tracking for educational institutions</li>
+                        <li>Consulting with businesses on digital transformation, system architecture, and security infrastructure</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item glass-card">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Software Developer</h3>
+                        <span class="timeline-date">2022 — 2024</span>
+                    </div>
+                    <p class="timeline-company">Technology Firm · Rwanda</p>
+                    <ul class="timeline-achievements">
+                        <li>Developed and maintained backend services using Java and MySQL for client-facing applications</li>
+                        <li>Implemented OAuth2 authentication and role-based access control across multiple projects</li>
+                        <li>Designed database schemas and RESTful APIs serving thousands of daily requests</li>
+                        <li>Reduced system response times by 40% through query optimization and caching strategies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item glass-card">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Junior Developer</h3>
+                        <span class="timeline-date">2021 — 2022</span>
+                    </div>
+                    <p class="timeline-company">Software Agency · Rwanda</p>
+                    <ul class="timeline-achievements">
+                        <li>Built responsive web applications using HTML5, CSS3, and JavaScript for diverse clients</li>
+                        <li>Collaborated on school management and business automation projects</li>
+                        <li>Practiced test-driven development with JUnit, maintaining 90%+ code coverage</li>
+                        <li>Gained hands-on experience with Git workflows, code reviews, and agile sprints</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Competency Section -->
+    <section id="skills" class="skills-section fade-in">
+        <h2 class="section-title">Engineering <span class="highlight">Competencies</span></h2>
+        <div class="skills-grid">
+            <div class="skill-category glass-card">
+                <div class="skill-cat-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Languages & Frameworks</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">Spring Security</span>
+                    <span class="skill-tag">SQL / MySQL</span>
+                    <span class="skill-tag">HTML5 / CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">JUnit</span>
+                </div>
+            </div>
+            <div class="skill-category glass-card">
+                <div class="skill-cat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Security & Infrastructure</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">AES-256 Encryption</span>
+                    <span class="skill-tag">OAuth2</span>
+                    <span class="skill-tag">Role-Based Access</span>
+                    <span class="skill-tag">Data Integrity</span>
+                    <span class="skill-tag">Secure Authentication</span>
+                </div>
+            </div>
+            <div class="skill-category glass-card">
+                <div class="skill-cat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h3>Architecture & Design</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">OOP Principles</span>
+                    <span class="skill-tag">Modular Design</span>
+                    <span class="skill-tag">RESTful APIs</span>
+                    <span class="skill-tag">Clean Architecture</span>
+                    <span class="skill-tag">Database Design</span>
+                </div>
+            </div>
+            <div class="skill-category glass-card">
+                <div class="skill-cat-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+                <h3>Process & Delivery</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git / Version Control</span>
+                    <span class="skill-tag">Test-Driven Development</span>
+                    <span class="skill-tag">Agile Methodology</span>
+                    <span class="skill-tag">Technical Documentation</span>
+                    <span class="skill-tag">Problem Analysis</span>
                 </div>
             </div>
         </div>
@@ -369,10 +514,25 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="glass-footer">
-        <p>Emmanuel | Systems & Software Consultant</p>
-        <p>&copy; 2026 All Rights Reserved.</p>
+        <div class="footer-inner">
+            <a href="#home" class="footer-logo">E<span class="nav-logo-dot">.</span></a>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#projects">Projects</a>
+                <a href="#services">Services</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://github.com/manziemmy268-hash" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/250793511982" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Emmanuel — Systems & Software Consultant. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Back to Top Button -->
@@ -394,7 +554,7 @@
     </div>
 
     <!-- Project Modal overlay -->
-    <div id="project-modal" class="modal-overlay">
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content glass-card">
             <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
@@ -402,7 +562,7 @@
                 <div class="modal-info">
                     <h3 id="modal-title"></h3>
                     <div class="tech-stack" id="modal-stack"></div>
-                    <p id="modal-desc"></p>
+                    <div id="modal-desc" class="modal-desc"></div>
                     <div class="modal-links" id="modal-links"></div>
                 </div>
             </div>
