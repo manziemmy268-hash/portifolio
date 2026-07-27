@@ -46,29 +46,10 @@
         <div class="glow-orb orb-3"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="glass-nav">
-        <a href="#home" class="logo">E<span>.</span></a>
-        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu"
-            aria-expanded="false">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <ul id="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#projects" class="nav-link">Case Studies</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li class="theme-toggle-wrapper">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-                    <i class="fa-solid fa-moon"></i>
-                    <i class="fa-solid fa-sun"></i>
-                </button>
-            </li>
-        </ul>
-    </nav>
+    <button id="theme-toggle" class="theme-toggle theme-toggle-fixed" aria-label="Toggle dark/light mode">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+    </button>
 
     <!-- Hero Section -->
     <section id="home" class="hero-section fade-in">
@@ -97,6 +78,107 @@
             <div class="image-border"></div>
             <img src="profile.jpg" alt="Emmanuel - Software Developer" class="profile-img" loading="eager"
                 fetchpriority="high">
+        </div>
+    </section>
+
+    <!-- Projects Section (Moved up — proof of work first) -->
+    <section id="projects" class="projects-section fade-in">
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+
+        <div class="project-filters">
+            <div class="search-box glass-card">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="project-search" placeholder="Search projects or technologies...">
+            </div>
+            <div class="filter-pills">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card glass-card" data-project="1" data-category="backend">
+                <div class="project-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="Secure Financial Transaction Engine" loading="lazy" width="600" height="400">
+                    <div class="project-overlay">
+                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Financial Transaction Engine</h3>
+                    <p>High-integrity backend system designed for secure, modular financial processing.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                        <span>MySQL</span>
+                        <span>Spring Security</span>
+                        <span>AES-256</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/manziemmy268-hash" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Financial Transaction Engine on GitHub">
+                            <i class="fa-brands fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card glass-card" data-project="2" data-category="backend">
+                <div class="project-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="Enterprise Workflow Optimization Tool" loading="lazy" width="600"
+                        height="400">
+                    <div class="project-overlay">
+                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Workflow Optimization Tool</h3>
+                    <p>Custom software solution engineered to streamline internal business processes and team collaboration.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                        <span>JUnit</span>
+                        <span>OAuth2</span>
+                        <span>Enterprise</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/manziemmy268-hash" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Workflow Optimization Tool on GitHub">
+                            <i class="fa-brands fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card glass-card" data-project="3" data-category="frontend">
+                <div class="project-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="High-Performance Digital Identity" loading="lazy" width="600" height="400">
+                    <div class="project-overlay">
+                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Digital Identity System</h3>
+                    <p>Modern, sub-second load digital presence designed for high conversion and brand authority.</p>
+                    <div class="tech-stack">
+                        <span>HTML5</span>
+                        <span>Performance</span>
+                        <span>UX/UI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/manziemmy268-hash" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Digital Identity System on GitHub">
+                            <i class="fa-brands fa-github"></i> View on GitHub
+                        </a>
+                        <a href="#" class="project-link project-link-demo" target="_blank" rel="noopener noreferrer" aria-label="View Digital Identity System live demo">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -150,87 +232,6 @@
                 <div class="stat-item">
                     <h3>Security</h3>
                     <span>Data Integrity</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section fade-in">
-        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
-
-        <div class="project-filters">
-            <div class="search-box glass-card">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="project-search" placeholder="Search projects or technologies...">
-            </div>
-            <div class="filter-pills">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-            </div>
-        </div>
-
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card glass-card" data-project="1" data-category="backend">
-                <div class="project-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&h=400&q=80"
-                        alt="Secure Financial Transaction Engine" loading="lazy" width="600" height="400">
-                    <div class="project-overlay">
-                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Financial Transaction Engine</h3>
-                    <p>High-integrity backend system designed for secure, modular financial processing.</p>
-                    <div class="tech-stack">
-                        <span>Java</span>
-                        <span>MySQL</span>
-                        <span>Architecture</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card glass-card" data-project="2" data-category="backend">
-                <div class="project-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&h=400&q=80"
-                        alt="Enterprise Workflow Optimization Tool" loading="lazy" width="600"
-                        height="400">
-                    <div class="project-overlay">
-                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Workflow Optimization Tool</h3>
-                    <p>Custom software solution engineered to streamline internal business processes and team collaboration.</p>
-                    <div class="tech-stack">
-                        <span>Java</span>
-                        <span>JUnit</span>
-                        <span>Enterprise</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card glass-card" data-project="3" data-category="frontend">
-                <div class="project-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&h=400&q=80"
-                        alt="High-Performance Digital Identity" loading="lazy" width="600" height="400">
-                    <div class="project-overlay">
-                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Digital Identity System</h3>
-                    <p>Modern, sub-second load digital presence designed for high conversion and brand authority.</p>
-                    <div class="tech-stack">
-                        <span>HTML5</span>
-                        <span>Performance</span>
-                        <span>UX/UI</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -291,14 +292,14 @@
                     <i class="fa-solid fa-envelope"></i>
                     <div class="contact-details-wrapper">
                         <h3>Email Me</h3>
-                        <p id="email-display" class="obfuscated">Click to reveal email</p>
+                        <a href="mailto:nkiranuyeemmanuel1@gmail.com" class="contact-direct">nkiranuyeemmanuel1@gmail.com</a>
                     </div>
                 </div>
                 <div class="contact-card">
                     <i class="fa-solid fa-phone"></i>
                     <div class="contact-details-wrapper">
                         <h3>Call Me</h3>
-                        <p id="phone-display" class="obfuscated">Click to reveal phone</p>
+                        <a href="tel:+250793511982" class="contact-direct">+250 793 511 982</a>
                     </div>
                 </div>
                 <div class="contact-card">
@@ -373,11 +374,12 @@
         <div class="modal-content glass-card">
             <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
-                <img id="modal-img" src="" alt="Project Image">
+                <img id="modal-img" src="" alt="Project screenshot">
                 <div class="modal-info">
-                    <h3 id="modal-title">Project Title</h3>
+                    <h3 id="modal-title"></h3>
                     <div class="tech-stack" id="modal-stack"></div>
-                    <p id="modal-desc">Project Description</p>
+                    <p id="modal-desc"></p>
+                    <div class="modal-links" id="modal-links"></div>
                 </div>
             </div>
         </div>

@@ -1,41 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================
-       HAMBURGER MENU TOGGLE
-    ========================================== */
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    /* ==========================================
-       SMOOTH SCROLLING & ACTIVE LINK HIGHLIGHT
-    ========================================== */
-    navLinks.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            // Close mobile menu after clicking
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    /* ==========================================
        SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
     ========================================== */
     const observerOptions = {
@@ -76,19 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => {
         scrollObserver.observe(el);
-    });
-
-    /* ==========================================
-       NAVBAR BACKGROUND ON SCROLL
-    ========================================== */
-    const nav = document.querySelector('.glass-nav');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
     });
 
     /* ==========================================
@@ -316,22 +268,25 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Financial Transaction Engine',
             category: 'backend',
             img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80',
-            stack: '<span>Java</span><span>MySQL</span><span>Architecture</span>',
-            desc: '<h3>The Problem</h3><p>Traditional financial software often lacks the modularity and security required for high-stakes transactions.</p><h3>The Solution</h3><p>Developed a robust Java-based engine utilizing Object-Oriented principles to ensure full data integrity and secure processing.</p><h3>The Result</h3><p>A secure, audit-ready system with comprehensive test coverage, effectively eliminating transaction error rates.</p>'
+            stack: '<span>Java</span><span>MySQL</span><span>Spring Security</span><span>AES-256</span>',
+            desc: '<h3>The Problem</h3><p>Traditional financial software often lacks the modularity and security required for high-stakes transactions.</p><h3>The Solution</h3><p>Developed a robust Java-based engine utilizing Object-Oriented principles and Spring Security for authentication. Sensitive data is encrypted at rest using AES-256, ensuring full data integrity and secure processing.</p><h3>The Result</h3><p>A secure, audit-ready system with comprehensive test coverage, effectively eliminating transaction error rates.</p>',
+            links: '<a href="https://github.com/manziemmy268-hash" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View Source & Architecture Diagrams</a>'
         },
         '2': {
             title: 'Workflow Optimization Tool',
             category: 'backend',
             img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
-            stack: '<span>Java</span><span>JUnit</span><span>Enterprise</span>',
-            desc: '<h3>The Problem</h3><p>Teams lose significant productivity due to fragmented communication and unclear task ownership.</p><h3>The Solution</h3><p>Engineered a custom real-time management platform with automated deadline tracking and priority sorting.</p><h3>The Result</h3><p>Streamlined team collaboration and enabled faster project delivery through clear accountability.</p>'
+            stack: '<span>Java</span><span>JUnit</span><span>OAuth2</span><span>Enterprise</span>',
+            desc: '<h3>The Problem</h3><p>Teams lose significant productivity due to fragmented communication and unclear task ownership.</p><h3>The Solution</h3><p>Engineered a custom real-time management platform with OAuth2-secured access, automated deadline tracking, and priority sorting.</p><h3>The Result</h3><p>Streamlined team collaboration and enabled faster project delivery through clear accountability.</p>',
+            links: '<a href="https://github.com/manziemmy268-hash" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View Source & Data Flow Diagrams</a>'
         },
         '3': {
             title: 'Digital Identity System',
             category: 'frontend',
             img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
             stack: '<span>HTML5</span><span>Performance</span><span>UX/UI</span>',
-            desc: '<h3>The Problem</h3><p>Slow, dated websites lose potential clients before they even engage with the brand.</p><h3>The Solution</h3><p>Built a state-of-the-art digital identity using modern CSS and optimized asset delivery for sub-second load times.</p><h3>The Result</h3><p>A professional, high-performance interface that establishes immediate authority and significantly increases lead conversion.</p>'
+            desc: '<h3>The Problem</h3><p>Slow, dated websites lose potential clients before they even engage with the brand.</p><h3>The Solution</h3><p>Built a state-of-the-art digital identity using modern CSS and optimized asset delivery for sub-second load times.</p><h3>The Result</h3><p>A professional, high-performance interface that establishes immediate authority and significantly increases lead conversion.</p>',
+            links: '<a href="https://github.com/manziemmy268-hash" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View on GitHub</a> <a href="#" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Case Study</a>'
         }
     };
 
@@ -396,29 +351,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modal-title');
     const modalStack = document.getElementById('modal-stack');
     const modalDesc = document.getElementById('modal-desc');
+    const modalLinks = document.getElementById('modal-links');
 
     /* ==========================================
-       CONTACT OBFUSCATION & REVEAL (Bot protection)
+       CONTACT LINKS (Direct — no obfuscation)
     ========================================== */
-    const emailDisplay = document.getElementById('email-display');
-    const phoneDisplay = document.getElementById('phone-display');
-
-    if (emailDisplay) {
-        emailDisplay.addEventListener('click', () => {
-            const u = "nkiranuyeemmanuel1";
-            const d = "gmail.com";
-            emailDisplay.textContent = `${u}@${d}`;
-            emailDisplay.classList.add('revealed');
-        }, { once: true });
-    }
-
-    if (phoneDisplay) {
-        phoneDisplay.addEventListener('click', () => {
-            const p = "+250 793 511 982";
-            phoneDisplay.textContent = p;
-            phoneDisplay.classList.add('revealed');
-        }, { once: true });
-    }
+    // Email and phone are now direct <a> links in the HTML.
 
     /* ==========================================
        WHATSAPP GREETING LOGIC
@@ -457,6 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalTitle.textContent = data.title; // Safer than innerHTML
                     modalStack.innerHTML = data.stack; // Local trusted data
                     modalDesc.innerHTML = data.desc; // Local trusted data
+                    modalLinks.innerHTML = data.links || ''; // GitHub & demo links
 
                     modal.classList.add('active');
                     document.body.classList.add('modal-open');
@@ -482,31 +421,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ==========================================
-       ACTIVE SECTION NAVIGATION HIGHLIGHT
-    ========================================== */
-    function updateActiveNavLink() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        let currentSection = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop - 100) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + currentSection) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', updateActiveNavLink);
-    
 });
