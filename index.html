@@ -7,20 +7,26 @@
     <meta name="description"
         content="Strategic software solutions for businesses and institutions. Scaling organizations through custom web applications and digital infrastructure.">
     <meta name="keywords" content="Software Consultant, Web Development Rwanda, School Management Systems, Business Digital Solutions">
+    <meta name="theme-color" content="#4f46e5">
 
     <!-- Open Graph / Social Media Sharing -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_RW">
+    <meta property="og:site_name" content="Emmanuel | Systems & Software Consultant">
     <meta property="og:url" content="https://emmanuel.dev/">
     <meta property="og:title" content="Emmanuel | Systems & Software Consultant">
     <meta property="og:description" content="Scaling businesses through secure, scalable digital systems. Custom web applications and infrastructure for institutions in Rwanda and beyond.">
-    <meta property="og:image" content="https://emmanuel.dev/profile.jpg">
+    <meta property="og:image" content="https://emmanuel.dev/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Emmanuel - Systems & Software Consultant">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://emmanuel.dev/">
     <meta property="twitter:title" content="Emmanuel | Systems & Software Consultant">
     <meta property="twitter:description" content="Scaling businesses through secure, scalable digital systems. Custom web applications and infrastructure for institutions in Rwanda and beyond.">
-    <meta property="twitter:image" content="https://emmanuel.dev/profile.jpg">
+    <meta property="twitter:image" content="https://emmanuel.dev/og-image.jpg">
 
     <title>Emmanuel | Systems & Software Consultant</title>
     <link rel="canonical" href="https://emmanuel.dev/">
@@ -30,20 +36,27 @@
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "@id": "https://emmanuel.dev/#service",
         "name": "Emmanuel - Systems & Software Consultant",
         "url": "https://emmanuel.dev",
-        "description": "Strategic software solutions for businesses and institutions. Scaling organizations through custom web applications and digital infrastructure.",
         "image": "https://emmanuel.dev/profile.jpg",
+        "description": "Strategic software solutions for businesses and institutions. Scaling organizations through custom web applications and digital infrastructure.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Kigali",
             "addressCountry": "RW"
         },
         "areaServed": ["RW", "KE", "UG", "TZ"],
+        "founder": {
+            "@type": "Person",
+            "name": "Emmanuel",
+            "jobTitle": "Systems & Software Consultant",
+            "url": "https://emmanuel.dev"
+        },
         "knowsAbout": ["Java", "Spring Security", "MySQL", "Web Development", "School Management Systems", "Financial Software", "Enterprise Workflow"],
         "email": "nkiranuyeemmanuel1@gmail.com",
         "telephone": "+250793511982",
-        "sameAs": ["https://github.com/manziemmy268-hash"]
+        "sameAs": ["https://github.com/manziemmy268-hash", "https://www.linkedin.com/in/emmy-manzi-499962380/"]
     }
     </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-family='system-ui' font-size='60' font-weight='800' fill='white' text-anchor='middle'>E</text></svg>">
@@ -56,7 +69,7 @@
     <link rel="dns-prefetch" href="https://formspree.io">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome for Icons (with SRI for security) -->
@@ -110,6 +123,10 @@
             <p class="hero-desc">
                 I architect and deliver secure, high-performance digital systems for organizations that need reliability at scale. From enterprise transaction engines to school management platforms — I build the infrastructure that keeps businesses running.
             </p>
+            <p class="availability">
+                <span class="status-dot" aria-hidden="true"></span>
+                Available for new projects
+            </p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">
                     Get a Quote <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -121,14 +138,13 @@
 
             <div class="social-links">
                 <a href="https://github.com/manziemmy268-hash" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/emmy-manzi-499962380/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
         <div class="hero-image-wrapper">
             <div class="image-border"></div>
             <img src="profile.jpg" alt="Emmanuel - Systems & Software Consultant" class="profile-img" loading="eager"
-                fetchpriority="high">
+                fetchpriority="high" width="768" height="1024" decoding="async">
         </div>
     </section>
 
@@ -230,12 +246,16 @@
                         <a href="https://github.com/manziemmy268-hash" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Digital Identity System on GitHub">
                             <i class="fa-brands fa-github"></i> View on GitHub
                         </a>
-                        <a href="#" class="project-link project-link-demo" target="_blank" rel="noopener noreferrer" aria-label="View Digital Identity System live demo">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Empty state when search/filter matches nothing -->
+        <div class="projects-empty" id="projects-empty" role="status">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h3>No matching projects</h3>
+            <p>Try a different search term or filter.</p>
         </div>
     </section>
 
@@ -485,31 +505,31 @@
                     <div class="form-group">
                         <label for="name">Full Name <span class="required">*</span></label>
                         <input type="text" id="name" name="name" required placeholder="Enter your full name"
-                            autocomplete="name" minlength="2" maxlength="50">
+                            autocomplete="name" minlength="2" maxlength="50" aria-describedby="name-error">
                         <span class="form-error" id="name-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="email">Business Email <span class="required">*</span></label>
                         <input type="email" id="email" name="email" required placeholder="example@company.com"
-                            autocomplete="email">
+                            autocomplete="email" aria-describedby="email-error">
                         <span class="form-error" id="email-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone (Optional)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+250 xxx xxx xxx" autocomplete="tel">
+                        <input type="tel" id="phone" name="phone" placeholder="+250 xxx xxx xxx" autocomplete="tel" aria-describedby="phone-error">
                         <span class="form-error" id="phone-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="message">Project Details <span class="required">*</span></label>
                         <textarea id="message" name="message" required placeholder="Tell me about your business needs..."
-                            rows="5" minlength="10" maxlength="500"></textarea>
+                            rows="5" minlength="10" maxlength="500" aria-describedby="message-error"></textarea>
                         <span class="char-count">0/500</span>
                         <span class="form-error" id="message-error"></span>
                     </div>
                     <button type="submit" class="btn-primary form-btn submit-btn">
                         Submit Inquiry <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                     </button>
-                    <span class="form-success" id="form-success"></span>
+                    <span class="form-success" id="form-success" role="status" aria-live="polite"></span>
                 </form>
             </div>
         </div>
@@ -528,7 +548,7 @@
             </nav>
             <div class="footer-social">
                 <a href="https://github.com/manziemmy268-hash" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/emmy-manzi-499962380/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://wa.me/250793511982" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <p class="footer-copy">&copy; 2026 Emmanuel — Systems & Software Consultant. All Rights Reserved.</p>
@@ -565,10 +585,39 @@
                     <div id="modal-desc" class="modal-desc"></div>
                     <div class="modal-links" id="modal-links"></div>
                 </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card glass-card" data-project="4" data-category="fullstack">
+                <div class="project-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&h=400&q=80"
+                        srcset="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&h=267&q=75 400w, https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&h=400&q=80 600w, https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&h=533&q=80 800w"
+                        sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                        alt="Phonne premium smartphone storefront" loading="lazy" width="600" height="400">
+                    <div class="project-overlay">
+                        <span class="icon-link view-details-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Phonne — Premium Smartphone Store</h3>
+                    <p>Live e-commerce storefront for premium smartphones with curated catalog and secure checkout.</p>
+                    <div class="tech-stack">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>E-commerce</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://alphatech-1y7.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Open Phonne live demo">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
+    <script src="projects-data.js" defer></script>
     <script src="index.js" defer></script>
 
 </body>

@@ -10,10 +10,10 @@ A premium, high-performance portfolio website built with **Vanilla JavaScript**,
 - **Security Hardened**: 
   - Subresource Integrity (SRI) for external assets.
   - Strict Content Security Policy (CSP) and security headers.
-  - Bot-resistant contact info obfuscation.
-- **Blazing Fast**: Optimized for Core Web Vitals with high-priority asset loading.
+- **Blazing Fast**: Optimized for Core Web Vitals with high-priority asset loading, optimized images, and `content-visibility`.
 - **Responsive & Dynamic**: Fully mobile-optimized with smooth reveal animations.
 - **Dark Mode**: Native theme switching with persistent state.
+- **Accessible**: WCAG AA — skip links, focus trap, ARIA labels, `prefers-reduced-motion` support.
 
 ## 🛠️ Tech Stack
 
@@ -25,23 +25,28 @@ A premium, high-performance portfolio website built with **Vanilla JavaScript**,
 ## 📁 Project Structure
 
 ```text
-├── index.html      # Main structure & SEO
-├── index.css       # Custom design system & responsiveness
-├── index.js        # Logic, animations & security
-├── vercel.json     # Deployment & security headers
-└── background.png  # High-fidelity dark mode background
+├── index.html          # Main structure, SEO & structured data
+├── index.css           # Custom design system & responsiveness
+├── index.js            # Interactions, a11y & performance logic
+├── projects-data.js    # Single source of truth for project data
+├── vercel.json         # Deployment & security headers
+├── sitemap.xml         # SEO sitemap
+├── robots.txt          # Crawler rules
+├── profile.jpg         # Hero portrait (optimized)
+├── background.jpg      # Dark mode background (optimized)
+└── og-image.jpg        # Open Graph social share card
 ```
 
 ## 🔒 Security & Privacy
 
 This repository follows industry best practices:
 - **Zero Secrets**: No API keys or sensitive data are stored in the repo.
-- **Scraper Protection**: Contact details are protected by a "Click to Reveal" pattern.
 - **Subresource Integrity**: All external libraries are verified via SRI hashes.
+- **Strict CSP**: Content-Security-Policy restricts scripts, styles, and images to trusted origins.
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-Developed by **Emmanuel** - [LinkedIn](https://www.linkedin.com/in/emmanuelle-dev/) | [Twitter](https://twitter.com/emmanuelle_dev)
+Developed by **Emmanuel** - [LinkedIn](https://www.linkedin.com/in/emmy-manzi-499962380/)
