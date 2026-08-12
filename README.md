@@ -25,10 +25,12 @@ Built with **Vanilla JavaScript**, **Modern CSS (Glassmorphism)**, and **HTML5**
 Home       → Hero: "Turn Manual Business Processes Into Reliable Software Systems."
 Problems   → The operational pains: manual records, disconnected ops, slow reporting, limited visibility
 Solutions  → 5 offerings: automation, operations management, MIS, custom apps, reporting & analytics
-Projects   → Proof of work (Phonne storefront, Digital Identity)
-Approach   → Engineering reliability: security, data integrity, architecture, visibility, testing
-About      → Positioning statement, experience timeline, engineering competencies, testimonials
-Contact    → Direct email/phone + inquiry form
+Projects   → Flagship case study (Phonne) + other projects (Digital Identity)
+Approach   → 6-step methodology: Understand → Design → Build → Validate → Deploy → Improve
+Engineering→ Reliability pillars: security, data integrity, architecture, visibility, testing
+About      → Positioning statement, defensible metrics, experience timeline
+Skills     → Engineering competencies (moved below business content)
+Contact    → Lead-qualifying inquiry form + direct channels
 ```
 
 ## 🛠️ Tech Stack

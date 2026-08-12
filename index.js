@@ -179,6 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!phoneRegex.test(value)) return 'Please enter a valid phone number';
                 return '';
             },
+            need: (value) => {
+                if (!value) return 'Please select what you need help with';
+                return '';
+            },
             message: (value) => {
                 if (!value.trim()) return 'Message is required';
                 if (value.trim().length < 10) return 'Message must be at least 10 characters';
@@ -191,7 +195,9 @@ document.addEventListener('DOMContentLoaded', () => {
         function validateField(fieldName) {
             const input = form.querySelector(`#${fieldName}`);
             const errorElement = document.getElementById(`${fieldName}-error`);
-            const error = validators[fieldName](input.value);
+            const validator = validators[fieldName];
+            if (!validator || !input) return true;
+            const error = validator(input.value);
 
             if (error) {
                 input.classList.add('error');
@@ -214,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Real-time validation on blur
-        ['name', 'email', 'phone', 'message'].forEach(fieldName => {
+        ['name', 'email', 'phone', 'need', 'current-process', 'message'].forEach(fieldName => {
             const input = form.querySelector(`#${fieldName}`);
             if (input) {
                 input.addEventListener('blur', () => validateField(fieldName));
@@ -234,9 +240,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const isNameValid = validateField('name');
             const isEmailValid = validateField('email');
             const isPhoneValid = validateField('phone');
+            const isNeedValid = validateField('need');
             const isMessageValid = validateField('message');
 
-            if (!isNameValid || !isEmailValid || !isPhoneValid || !isMessageValid) {
+            if (!isNameValid || !isEmailValid || !isPhoneValid || !isNeedValid || !isMessageValid) {
                 return;
             }
 
@@ -329,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ========================================== */
     const searchInput = document.getElementById('project-search');
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.projects-grid .project-card');
 
     // Inject "Featured" badge on cards flagged in projectData
     projectCards.forEach(card => {
@@ -475,8 +482,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Open Modal
-        projectCards.forEach(card => {
+        // Open Modal (grid cards + flagship case study)
+        const modalTriggers = document.querySelectorAll('.project-card, .case-study-card');
+        modalTriggers.forEach(card => {
             card.addEventListener('click', (e) => {
                 // Don't open the modal when clicking project links (GitHub / demo)
                 if (e.target.closest('a')) return;
