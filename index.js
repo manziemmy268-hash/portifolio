@@ -105,21 +105,25 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.className = 'nav-overlay';
         document.body.appendChild(overlay);
 
+        const navToggleIcon = navToggle.querySelector('i');
+
+        function setNavState(isOpen) {
+            navLinksContainer.classList.toggle('open', isOpen);
+            overlay.classList.toggle('active', isOpen);
+            document.body.classList.toggle('nav-open', isOpen);
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            if (navToggleIcon) {
+                navToggleIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+            }
+        }
+
         function closeNav() {
-            navLinksContainer.classList.remove('open');
-            overlay.classList.remove('active');
-            navToggle.querySelector('i').className = 'fa-solid fa-bars';
+            setNavState(false);
         }
 
         navToggle.addEventListener('click', () => {
             const isOpen = navLinksContainer.classList.contains('open');
-            if (isOpen) {
-                closeNav();
-            } else {
-                navLinksContainer.classList.add('open');
-                overlay.classList.add('active');
-                navToggle.querySelector('i').className = 'fa-solid fa-xmark';
-            }
+            setNavState(!isOpen);
         });
 
         overlay.addEventListener('click', closeNav);
@@ -135,6 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeNav();
             }
         });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navLinksContainer.classList.contains('open')) {
+                closeNav();
+            }
+        }, { passive: true });
+
+        navToggle.setAttribute('aria-expanded', 'false');
     }
 
     /* ==========================================

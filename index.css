@@ -74,6 +74,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 96px;
 }
 
 body {
@@ -159,7 +160,7 @@ h1, h2, h3, h4 {
 }
 
 section {
-    padding: 70px 5%;
+    padding: clamp(56px, 6vw, 72px) 5%;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -223,7 +224,7 @@ section {
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
 }
 
@@ -329,7 +330,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1500;
+    z-index: 1700;
     padding: 0.8rem 0;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     background: transparent;
@@ -356,6 +357,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
 }
 
 .nav-logo {
@@ -424,6 +426,7 @@ section {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    flex-shrink: 0;
 }
 
 .nav-toggle {
@@ -439,6 +442,8 @@ section {
     align-items: center;
     justify-content: center;
     transition: var(--transition-smooth);
+    position: relative;
+    z-index: 1701;
 }
 
 .nav-toggle:hover {
@@ -462,7 +467,7 @@ section {
         gap: 0.5rem;
         transition: right 0.35s cubic-bezier(0.23, 1, 0.32, 1);
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-        z-index: 1600;
+        z-index: 1800;
     }
 
     .nav-links.open {
@@ -487,7 +492,7 @@ section {
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.4);
-        z-index: 1550;
+        z-index: 1600;
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
@@ -496,6 +501,11 @@ section {
     .nav-overlay.active {
         opacity: 1;
         visibility: visible;
+    }
+
+    body.nav-open {
+        overflow: hidden;
+        touch-action: none;
     }
 }
 
@@ -552,7 +562,7 @@ section {
    HERO SECTION
 ========================================= */
 .hero-section {
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -635,6 +645,7 @@ section {
     gap: 1.2rem;
     justify-content: flex-start;
     margin-bottom: 1.25rem;
+    flex-wrap: wrap;
 }
 
 .hero-credibility {
@@ -928,7 +939,7 @@ section {
 ========================================= */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
 }
 
@@ -993,6 +1004,7 @@ section {
     font-size: 1.2rem;
     color: var(--text-secondary);
     line-height: 1.8;
+    overflow-wrap: anywhere;
 }
 
 .about-stats {
@@ -1095,7 +1107,7 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
     min-height: 400px;
 }
@@ -1362,6 +1374,7 @@ section {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.25s ease;
+    overflow-wrap: anywhere;
 }
 
 .contact-direct:hover {
@@ -1613,11 +1626,15 @@ section {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+
+    .nav-cta {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
     section {
-        padding: 80px 5%;
+        padding: 72px 5%;
     }
 
     .hero-title {
@@ -1654,6 +1671,31 @@ section {
     .about-stats {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .nav-inner {
+        padding: 0 4%;
+    }
+
+    .nav-links {
+        width: min(84vw, 320px);
+        padding-top: 4.75rem;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-card {
+        align-items: flex-start;
     }
 }
 /* =========================================
@@ -2100,6 +2142,10 @@ body.modal-open {
         padding: 1.2rem;
     }
 
+    .contact-info {
+        gap: 1rem;
+    }
+
     .contact-form-wrapper {
         padding: 1.5rem;
     }
@@ -2438,7 +2484,7 @@ a {
     .about-stats {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 
     .hero-image-wrapper {
@@ -2624,7 +2670,7 @@ a {
 ========================================= */
 .method-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
 }
 
@@ -2726,5 +2772,14 @@ a {
 
     .case-study-source {
         justify-content: center;
+    }
+
+    .case-study-actions {
+        width: 100%;
+    }
+
+    .case-study-actions .btn-primary,
+    .case-study-actions .btn-secondary {
+        width: 100%;
     }
 }
