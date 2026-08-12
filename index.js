@@ -408,35 +408,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ========================================== */
     // Email and phone are now direct <a> links in the HTML.
 
-    /* ==========================================
-       WHATSAPP GREETING LOGIC
-    ========================================== */
-    const waGreeting = document.getElementById('whatsapp-greeting');
-    const closeGreeting = document.getElementById('close-greeting');
-
-    if (waGreeting) {
-        // Show greeting once per browser session
-        if (!sessionStorage.getItem('waGreetingShown')) {
-            sessionStorage.setItem('waGreetingShown', '1');
-
-            // Show greeting after 3 seconds
-            setTimeout(() => {
-                waGreeting.classList.add('show');
-
-                // Auto-hide after 5 seconds of being shown
-                setTimeout(() => {
-                    waGreeting.classList.remove('show');
-                }, 5000);
-            }, 3000);
-        }
-
-        // Close functionality
-        closeGreeting.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent triggering any underlying clicks
-            waGreeting.classList.remove('show');
-        });
-    }
-
     if (modal) {
         let lastFocusedElement = null;
 
