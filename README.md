@@ -1,26 +1,42 @@
-# Modern Software Developer Portfolio
+# Emmy Software Solutions — Business Software Portfolio
 
-A premium, high-performance portfolio website built with **Vanilla JavaScript**, **Modern CSS (Glassmorphism)**, and **HTML5**. Designed with a focus on aesthetics, security, and blazing-fast performance.
+A business-focused portfolio for **Emmanuel** ("Emmy"), positioning custom software engineering around the operational problems it solves — manual processes, disconnected operations, slow reporting, and limited visibility.
+
+Built with **Vanilla JavaScript**, **Modern CSS (Glassmorphism)**, and **HTML5**. Designed for performance, accessibility, and security, with messaging that speaks to business owners and decision-makers.
 
 ![Portfolio Preview](profile.jpg)
 
 ## 🚀 Key Features
 
+- **Business-Positioned Messaging**: Problem-first hero, pain-point section, solutions, and an "engineered for reliability" approach section.
 - **Premium Aesthetics**: Smooth glassmorphism effects and dynamic background orbs.
-- **Security Hardened**: 
+- **Security Hardened**:
   - Subresource Integrity (SRI) for external assets.
   - Strict Content Security Policy (CSP) and security headers.
 - **Blazing Fast**: Optimized for Core Web Vitals with high-priority asset loading, optimized images, and `content-visibility`.
 - **Responsive & Dynamic**: Fully mobile-optimized with smooth reveal animations.
 - **Dark Mode**: Native theme switching with persistent state.
 - **Accessible**: WCAG AA — skip links, focus trap, ARIA labels, `prefers-reduced-motion` support.
+- **SEO-Ready**: Semantic HTML, JSON-LD structured data, Open Graph/Twitter cards, sitemap, and canonical URL.
+
+## 🧭 Page Structure
+
+```text
+Home       → Hero: "Turn Manual Business Processes Into Reliable Software Systems."
+Problems   → The operational pains: manual records, disconnected ops, slow reporting, limited visibility
+Solutions  → 5 offerings: automation, operations management, MIS, custom apps, reporting & analytics
+Projects   → Proof of work (Financial Engine, Phonne storefront, Digital Identity)
+Approach   → Engineering reliability: security, data integrity, architecture, visibility, testing
+About      → Positioning statement, experience timeline, engineering competencies, testimonials
+Contact    → Direct email/phone + inquiry form
+```
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5, Vanilla JavaScript (ES6+), CSS3
 - **Design**: Custom Glassmorphism System, Font Awesome 6.4
 - **Performance**: Intersection Observer API, Fetch Priority
-- **Security**: SRI, CSP Headers, Bot Mitigation
+- **Security**: SRI, CSP Headers
 
 ## 📁 Project Structure
 
