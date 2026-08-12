@@ -4,38 +4,9 @@
 ========================================== */
 const projectData = {
     '1': {
-        title: 'Financial Transaction Engine',
-        category: 'backend',
-        featured: true,
-        img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
-        stack: '<span>Java</span><span>MySQL</span><span>Spring Security</span><span>AES-256</span>',
-        desc: `
-            <div class="modal-detail">
-                <h3>The Problem</h3>
-                <p>Traditional financial software often lacks the modularity and security required for high-stakes transactions. Existing solutions suffered from monolithic architectures that made auditing difficult, and sensitive data was stored without proper encryption at rest.</p>
-
-                <h3>Architecture & Design</h3>
-                <p>Built on a modular Java architecture using OOP principles with clear separation of concerns. The engine is decomposed into independent transaction processing, authentication, and audit modules. Spring Security handles session management and role-based access, while a custom encryption layer wraps all sensitive data operations.</p>
-
-                <h3>Key Technical Decisions</h3>
-                <ul>
-                    <li><strong>AES-256 encryption at rest</strong> — all PII and financial records encrypted before database insertion</li>
-                    <li><strong>Spring Security filter chain</strong> — custom authentication provider with BCrypt password hashing</li>
-                    <li><strong>MySQL with InnoDB</strong> — transactional integrity with ACID-compliant storage engine</li>
-                    <li><strong>Comprehensive JUnit suite</strong> — unit + integration tests covering edge cases and failure scenarios</li>
-                </ul>
-
-                <h3>Challenges</h3>
-                <p>Designing a modular encryption layer that could scale without introducing latency bottlenecks. Solved by implementing a cipher service abstraction that supports key rotation without downtime, and caching decrypted session tokens securely in memory only.</p>
-
-                <h3>Result</h3>
-                <p>A secure, audit-ready system with <strong>zero transaction errors in production</strong>. Comprehensive test coverage at <strong>92%</strong>, with full traceability from input to encrypted storage. The modular design allows new transaction types to be added without modifying core security logic.</p>
-            </div>`,
-        links: '<a href="https://github.com/manziemmy268-hash" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View Source & Architecture</a>'
-    },
-    '2': {
         title: 'Phonne — Premium Smartphone Store',
         category: 'fullstack',
+        featured: true,
         img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80',
         stack: '<span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>E-commerce</span>',
         desc: `
@@ -62,7 +33,7 @@ const projectData = {
             </div>`,
         links: '<a href="https://alphatech-1y7.pages.dev/" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> <a href="https://github.com/manziemmy268-hash/AlphaTech" class="modal-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View Source</a>'
     },
-    '3': {
+    '2': {
         title: 'Digital Identity System',
         category: 'frontend',
         img: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80',
