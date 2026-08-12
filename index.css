@@ -213,6 +213,41 @@ section {
     margin-bottom: 0;
 }
 
+.section-intro {
+    max-width: 720px;
+    margin: -2rem auto 3rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.transition-statement {
+    max-width: 760px;
+    margin: 3rem auto 0;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+.transition-statement::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    margin: 0 auto 1.25rem;
+    opacity: 0.6;
+}
+
 /* Glasscard Utility */
 .glass-card {
     background: var(--card-gradient);
@@ -367,6 +402,25 @@ section {
     font-weight: 600;
 }
 
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.55rem 1.2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: var(--transition-smooth);
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--accent-glow);
+}
+
 .nav-actions {
     display: flex;
     align-items: center;
@@ -423,6 +477,11 @@ section {
 
     .nav-toggle {
         display: flex;
+    }
+
+    .nav-cta {
+        font-size: 0.78rem;
+        padding: 0.45rem 0.9rem;
     }
 
     .nav-overlay {
@@ -512,37 +571,27 @@ section {
     flex: 1;
 }
 
+.hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    margin-bottom: 1.25rem;
+}
+
 .hero-title {
-    font-size: clamp(3rem, 10vw, 6.5rem);
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
     font-weight: 800;
-    line-height: 0.95;
+    line-height: 1.12;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
     color: var(--text-primary);
     background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-primary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-.role-text {
-    font-size: clamp(1.2rem, 3vw, 2.2rem);
-    color: var(--text-primary);
-    font-weight: 700;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-}
-
-.role-text::after {
-    content: '';
-    height: 2px;
-    width: 60px;
-    background: var(--accent-glow);
-}
-/* Removed ::before for left-alignment */
 
 .hero-desc {
     font-size: 1.15rem;
@@ -586,7 +635,15 @@ section {
     display: flex;
     gap: 1.2rem;
     justify-content: flex-start;
-    margin-bottom: 4rem;
+    margin-bottom: 1.25rem;
+}
+
+.hero-credibility {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    margin: 0 0 3rem;
 }
 
 .social-links {
@@ -655,13 +712,6 @@ section {
 /* =========================================
    SERVICES SECTION
 ========================================= */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-bottom: 4rem;
-}
-
 .service-card {
     padding: 3rem 2rem;
     display: flex;
@@ -1634,10 +1684,6 @@ section {
         order: -1;
     }
 
-    .role-text {
-        justify-content: center;
-    }
-
     .hero-desc {
         text-align: center;
     }
@@ -1654,11 +1700,7 @@ section {
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 8vw, 4rem);
-    }
-
-    .role-text {
-        font-size: 1.2rem;
+        font-size: clamp(2rem, 7vw, 3rem);
     }
 
     .hero-image-wrapper {
@@ -2089,11 +2131,7 @@ body.modal-open {
     }
 
     .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .role-text {
-        font-size: 1.1rem;
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
     }
 
     .hero-desc {
@@ -2104,7 +2142,7 @@ body.modal-open {
         flex-direction: column;
         width: 100%;
         gap: 0.8rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.25rem;
     }
 
     .hero-buttons .btn-primary,
@@ -2481,7 +2519,7 @@ a {
    MOBILE LAYOUT FIXES
 ========================================= */
 @media (max-width: 480px) {
-    .services-grid {
+    .feature-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
