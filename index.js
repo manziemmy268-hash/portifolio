@@ -504,4 +504,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    /* ==========================================
+       WHATSAPP LINKS — open via JS so the phone
+       number is not exposed in the hover URL
+    ========================================== */
+    document.querySelectorAll('.js-wa').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://wa.me/250793511982', '_blank', 'noopener,noreferrer');
+        });
+    });
+
 });
