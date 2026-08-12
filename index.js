@@ -338,19 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.projects-grid .project-card');
 
-    // Inject "Featured" badge on cards flagged in projectData
-    projectCards.forEach(card => {
-        const data = projectData[card.getAttribute('data-project')];
-        if (data && data.featured) {
-            const badge = document.createElement('span');
-            badge.className = 'featured-badge';
-            badge.setAttribute('aria-hidden', 'true');
-            badge.textContent = '★ Featured';
-            const wrapper = card.querySelector('.project-img-wrapper');
-            if (wrapper) wrapper.prepend(badge);
-        }
-    });
-
     let activeFilter = 'all';
     let activeSearch = '';
 
