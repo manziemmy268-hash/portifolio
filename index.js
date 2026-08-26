@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (i < text.length) {
                 textSpan.textContent += text.charAt(i);
                 i++;
-                setTimeout(typeChar, 55 + Math.random() * 40);
+                setTimeout(typeChar, 90 + Math.random() * 60);
             }
         }
         typeChar();
