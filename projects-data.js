@@ -4,7 +4,7 @@
 ========================================== */
 const projectData = {
     '1': {
-        title: 'Phonne — Premium Smartphone Store',
+        title: 'Alphatech — Online Smartphone Store',
         category: 'fullstack',
         img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80',
         stack: '<span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>E-commerce</span>',

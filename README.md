@@ -25,7 +25,7 @@ Built with **Vanilla JavaScript**, **Modern CSS (Glassmorphism)**, and **HTML5**
 Home       → Hero: "Turn Manual Business Processes Into Reliable Software Systems."
 Problems   → The operational pains: manual records, disconnected ops, slow reporting, limited visibility
 Solutions  → 5 offerings: automation, operations management, MIS, custom apps, reporting & analytics
-Projects   → Flagship case study (Phonne)
+Projects   → Flagship case study (Alphatech)
 Approach   → 6-step methodology: Understand → Design → Build → Validate → Deploy → Improve
 Engineering→ Reliability pillars: security, data integrity, architecture, visibility, testing
 About      → Positioning statement, defensible metrics, experience timeline
