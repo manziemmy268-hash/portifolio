@@ -600,6 +600,19 @@ section {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    min-height: 3.6em;
+}
+
+.typewriter-cursor {
+    display: inline;
+    font-weight: 400;
+    -webkit-text-fill-color: var(--accent-primary);
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .hero-desc {
@@ -2458,6 +2471,14 @@ a {
 
     .whatsapp-float {
         animation: none;
+    }
+
+    .typewriter-text {
+        content: attr(data-text);
+    }
+
+    .typewriter-cursor {
+        display: none;
     }
 }
 

@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================
+       TYPEWRITER ANIMATION
+    ========================================== */
+    const typewriterEl = document.querySelector('.typewriter');
+    if (typewriterEl) {
+        const text = typewriterEl.getAttribute('data-text');
+        const textSpan = typewriterEl.querySelector('.typewriter-text');
+        textSpan.textContent = '';
+        let i = 0;
+        function typeChar() {
+            if (i < text.length) {
+                textSpan.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeChar, 55 + Math.random() * 40);
+            }
+        }
+        typeChar();
+    }
+
+    /* ==========================================
        SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
     ========================================== */
     const observerOptions = {
